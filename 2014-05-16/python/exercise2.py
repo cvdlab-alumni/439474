@@ -31,7 +31,7 @@ hpc = SKEL_1(STRUCT(MKPOLS(piano_terra)))
 hpc = cellNumbering (piano_terra,hpc)(range(len(piano_terra[1])),CYAN,1)
 #VIEW(hpc)
 
-toRemove=[104,103,102,107]
+toRemove=[104,103,102,106]
 piano_terra= piano_terra[0],[cell for k, cell in enumerate (piano_terra[1]) if not (k in toRemove)]
 #VIEW(hpc)
 
@@ -109,7 +109,7 @@ hpc = SKEL_1(STRUCT(MKPOLS(piano_terra)))
 hpc = cellNumbering (piano_terra,hpc)(range(len(piano_terra[1])),CYAN,1)
 #VIEW(hpc)
 
-toRemove=[104,103,102,107]
+toRemove=[104,103,102,106]
 piano_terra= piano_terra[0],[cell for k, cell in enumerate (piano_terra[1]) if not (k in toRemove)]
 #VIEW(hpc)
 
