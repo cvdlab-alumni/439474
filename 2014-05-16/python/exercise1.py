@@ -199,4 +199,4 @@ hpc = cellNumbering (master_block,hpc)(range(len(master_block[1])),CYAN,1)
 
 toRemove=[23,27,31,35,41,51,57,63,12,75,69,45,86,106,100,62,122,118,121,120,82,115,92]
 master_block= master_block[0],[cell for k, cell in enumerate (master_block[1]) if not (k in toRemove)]
-#DRAW(master_block)
+DRAW(master_block)
