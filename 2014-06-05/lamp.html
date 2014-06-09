@@ -177,12 +177,10 @@
       jointsec.joint2.sphere.dome.add(bulb);
       jointsec.joint2.sphere.dome.bulb = bulb;
 
-
       //add ligth to the bulb
       var spotLight = new THREE.SpotLight( 0xffffff );
-  
       spotLight.shadowMapWidth = 2048; 
-      //spotLight.intensity = intensity;
+      spotLight.intensity = 2;
       spotLight.position.set(0,0,0);
       bulb.add(spotLight);
      
@@ -193,6 +191,12 @@
       spotLight.target = pointInfinity;
       spotLight.castShadow = true;
       spotLight.shadowCameraNear = 10;
+
+      //to have a light into the lamp
+      var pointLight = new THREE.PointLight(0xffffff, 8 , 8);
+      bulb.add(pointLight);
+      pointLight.castShadow = true;
+      pointLight.position.z = -5;
 
       //add an object that is illuminated by the ligth
       var torusGeometry = new THREE.TorusGeometry(4, 1.2, 32, 32);
@@ -217,6 +221,7 @@
 
         this.showAxisHelper = true;
         this.switchLamp = true;
+        this.trackball = true;
         this.alpha = Math.PI/2;
         this.beta = Math.PI/4; 
         this.gamma = Math.PI/2;
@@ -313,6 +318,7 @@
 
       var axis_control = gui.add(controls, 'showAxisHelper');
       var switchLamp_control = gui.add(controls, 'switchLamp');
+      var trackball_control = gui.add(controls, 'trackball');
 
       axis_control.onChange(function (value) {
         axisHelper.visible = value;
@@ -320,11 +326,16 @@
 
       switchLamp_control.onChange(function (value) {
         spotLight.visible = value;
+        pointLight.visible = value;
         torus.castShadow = value;
         text1.children[0].castShadow = value;
         text2.children[0].castShadow = value;
         text3.children[0].castShadow = value;
         textbase.children[0].castShadow = value;
+      });
+
+      trackball_control.onChange(function (value) {
+        trackball_control.trackball = value;
       });
 
       //define animations
@@ -461,7 +472,6 @@
         textbase.rotation.x=Math.PI/2;
         //scene.add(textbase);
       
-
       setTimeout( function() {toOrigin(); scene.add(textbase)} , 9000);
       
       function createMesh(geom) {
@@ -474,7 +484,9 @@
       function render() {
         stats.update();
 
-        trackballControls.update();
+        if (controls.trackball) {
+                trackballControls.update();
+            }
         KF.update();
         TWEEN.update();
 
@@ -496,7 +508,9 @@
         $('body').append(stats.domElement);
         return stats;
       }
+
     });
+
   </script>  
  </body>
 </html>
