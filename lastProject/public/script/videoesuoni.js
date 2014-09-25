@@ -1,4 +1,40 @@
 //carico video e suoni
+//suono allarme antincendio
+var fireAllarmaudio = document.createElement('audio');
+
+var fireAllarmaudioperc = document.createElement('source');
+fireAllarmaudioperc.src="assets/audioevideo/fireAlarm.mp3";
+
+fireAllarmaudio.appendChild(fireAllarmaudioperc);
+fireAllarmaudio.loop=false;
+
+//suono macchinetta del caffè
+var motoaudio = document.createElement('audio');
+
+var motoaudioperc = document.createElement('source');
+motoaudioperc.src="assets/audioevideo/moto2.mp3";
+
+motoaudio.appendChild(motoaudioperc);
+motoaudio.loop=false;
+
+//suono macchinetta del caffè
+var coffeaudio = document.createElement('audio');
+
+var coffeaudioperc = document.createElement('source');
+coffeaudioperc.src="assets/audioevideo/caffe.mp3";
+
+coffeaudio.appendChild(coffeaudioperc);
+coffeaudio.loop=false;
+
+//suono ferro da stiro
+var ferroaudio = document.createElement('audio');
+
+var ferroaudioperc = document.createElement('source');
+ferroaudioperc.src="assets/audioevideo/ferroDaStiro.mp3";
+
+ferroaudio.appendChild(ferroaudioperc);
+ferroaudio.loop=false;
+
 //suono porta che cigola
 var portaaudio = document.createElement('audio');
 
@@ -7,6 +43,34 @@ portaaudioperc.src="assets/audioevideo/suonoporta.mp3";
 
 portaaudio.appendChild(portaaudioperc);
 portaaudio.loop=false;
+
+//suono radio
+//i'm gonna be
+var radioaudio1 = document.createElement('audio');
+
+var radioaudioperc1 = document.createElement('source');
+radioaudioperc1.src="assets/audioevideo/imgonnabe.mp3";
+
+radioaudio1.appendChild(radioaudioperc1);
+radioaudio1.loop=false;
+
+//panic station
+var radioaudio2 = document.createElement('audio');
+
+var radioaudioperc2 = document.createElement('source');
+radioaudioperc2.src="assets/audioevideo/panicstation.mp3";
+
+radioaudio2.appendChild(radioaudioperc2);
+radioaudio2.loop=false;
+
+//no angels
+var radioaudio3 = document.createElement('audio');
+
+var radioaudioperc3 = document.createElement('source');
+radioaudioperc3.src="assets/audioevideo/noangels.mp3";
+
+radioaudio3.appendChild(radioaudioperc3);
+radioaudio3.loop=false;
 
 //allarme cassaforte
 var cassaforteaudio = document.createElement('audio');

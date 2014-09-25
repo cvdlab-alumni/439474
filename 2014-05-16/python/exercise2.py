@@ -12,7 +12,7 @@ from scipy import *
 from architectural import *
 from myfont import *
 from sysml import *
-from es1hw3 import master_block
+from exercise1 import master_block
 
 DRAW = COMP([VIEW,STRUCT,MKPOLS])
 
